@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Layout</title>
+    <style>
+        /* 1. Убираем отступы у браузера по умолчанию */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 2. Растягиваем html и body на 100% высоты и ширины */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 3. Делаем сам экран "оранжевой рамкой" */
+        body {
+            /* Фон теперь оранжевый (цвет рамки) */
+            background-color: #fca; 
+            
+            /* Используем flex для вертикального построения */
+            display: flex;
+            flex-direction: column;
+            
+            /* Отступ внутри экрана будет создавать эффект "толстой рамки" */
+            padding: 15px; 
+            
+            /* Чтобы контент не вылезал за пределы padding */
+            box-sizing: border-box; 
+            
+            /* Расстояние между блоками */
+            gap: 15px; 
+        }
+
+        /* Верхний блок */
+        .top-block {
+            height: 15%; /* Фиксированная высота или flex: 0 0 15% */
+            background-color: white;
+            border: 2px solid #e0e0e0;
+        }
+
+        /* Средняя секция */
+        .middle-section {
+            flex: 1; /* Занимает всё свободное место */
+            display: flex;
+            gap: 15px; /* Расстояние между колонками */
+        }
+
+        /* Левая колонка (два блока) - Зеленый */
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .left-top {
+            flex: 1;
+            background-color: white;
+            border: 2px solid #4caf50; /* Зеленый */
+        }
+
+        .left-bottom {
+            flex: 1;
+            background-color: white;
+            border: 2px solid #4caf50; /* Зеленый */
+        }
+
+        /* Центральный блок - Синий */
+        .center-block {
+            flex: 1;
+            background-color: white;
+            border: 2px solid #2196f3; /* Синий */
+        }
+
+        /* Правый блок - Оранжевый */
+        .right-block {
+            flex: 1;
+            background-color: white;
+            border: 2px solid #ff9800; /* Оранжевый */
+        }
+
+        /* Нижний блок */
+        .bottom-block {
+            height: 15%;
+            background-color: white;
+            border: 2px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Убрали лишний div.container, теперь body сам является контейнером -->
+    
+    <div class="top-block"></div>
+    
+    <div class="middle-section">
+        <!-- Левая часть (Зеленая обводка) -->
+        <div class="left-column">
+            <div class="left-top"></div>
+            <div class="left-bottom"></div>
+        </div>
+        
+        <!-- Центр (Синяя обводка) -->
+        <div class="center-block"></div>
+        
+        <!-- Право (Оранжевая обводка) -->
+        <div class="right-block"></div>
+    </div>
+    
+    <div class="bottom-block"></div>
+</body>
+</html>
